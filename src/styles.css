@@ -1,0 +1,348 @@
+/* 📌 Основные стили */
+body {
+    font-family: "Rubik", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #070F2B, #1B1A55);
+    color: white;
+    text-align: center;
+  }
+  
+  /* 📌 Общий контейнер */
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+  /* 📌 Главная страница */
+  .homepage {
+    width: 100%;
+    padding-bottom: 40px;
+  }
+  
+  /* 📌 Блок с изображением */
+  .hero-section {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: #1B1A55;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: brightness(50%); /* 50% яркости */
+}
+
+  
+  .hero-title {
+    position: relative;
+    font-size: 32px;
+    font-weight: bold;
+    max-width: 80%;
+    z-index: 1;
+  }
+  
+  /* 📌 Блок преимуществ */
+  .advantages {
+    background-color: #535C91;
+    padding: 40px 20px;
+    border-radius: 20px;
+    margin: 40px auto;
+    max-width: 900px;
+  }
+  
+  .advantages h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .advantages-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .advantage-item {
+    background: #9290C3;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+  }
+  
+  .advantage-item h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  
+  .advantage-item p {
+    font-size: 16px;
+    opacity: 0.8;
+  }
+  
+  /* 📌 Кнопка */
+  .start-button {
+    background: #1B1A55;
+    color: white;
+    padding: 15px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+  }
+  
+  .start-button:hover {
+    background: #535C91;
+  }
+  /* 📌 Общий контейнер конфигуратора */
+  .configurator-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    width: 100vw;
+    padding: 20px;
+    background: linear-gradient(135deg, #070F2B, #1B1A55);
+    color: white;
+    text-align: center;
+}
+
+
+/* 📌 Заголовок */
+.configurator-container h1 {
+    font-size: 26px;
+    margin-bottom: 15px;
+    margin-top: 60px;
+}
+
+/* 📌 Панель выбора шаблонов */
+.template-picker {
+    display: flex;
+    flex-wrap: wrap; /* Позволяет элементам переноситься */
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.template-picker img {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.2s;
+}
+
+.template-picker img:hover {
+    transform: scale(1.1);
+}
+
+/* 📌 Основной контент (веломайка + холст) */
+.configurator-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Центрирование */
+    gap: 15px;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* 📌 Панель выбора элементов */
+.elements-panel {
+    display: flex;
+    flex-wrap: wrap; /* Позволяет элементам переноситься */
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.draggable-element {
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.draggable-element:hover {
+    transform: scale(1.1);
+}
+
+/* 📌 Канвас */
+.canvas-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 500px; /* Увеличиваем высоту */
+  position: relative;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.canvas-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Чтобы изображение полностью влезало */
+  position: absolute;
+  top: -30px; /* Поднимаем майку вверх */
+}
+
+
+
+
+.canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #ccc; /* Тонкая рамка */
+  background-color: transparent;
+  border-radius: 8px; /* Чуть скругляем углы */
+  touch-action: none;
+}
+
+
+/* 📌 Панель инструментов */
+.toolbar {
+  display: flex;
+  justify-content: space-evenly; /* Равномерное распределение кнопок */
+  flex-wrap: wrap; /* Если кнопок много, они не ломаются */
+  gap: 15px;
+  margin-top: 60px;
+  padding: 15px 0;
+  background-color: #1B1A55; /* Цвет фона */
+  border-radius: 12px; /* Скругляем углы панели */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); /* Легкая тень для глубины */
+  animation: fadeIn 0.5s ease-out; /* Плавное появление панели */
+}
+
+.button-group {
+  display: flex;
+  gap: 10px; /* Отступ между кнопками */
+}
+
+
+/* 📌 Кнопки в панели */
+button {
+  padding: 12px 20px;
+  font-size: 18px;
+  border: 2px solid transparent; /* Прозрачная рамка для плавного эффекта */
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #4CAF50; /* Зелёный цвет */
+  color: white;
+  font-weight: bold;
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Анимация для кнопок */
+}
+
+button:hover {
+  transform: scale(1.1); /* Увеличиваем кнопку при наведении */
+  background-color: #3e8e41; /* Темнее при наведении */
+}
+
+/* 📌 Заголовок кнопки */
+button:focus {
+  outline: none; /* Убираем обводку при фокусе */
+}
+
+/* 📌 Стиль для кнопок с различными цветами */
+.bg-green {
+  background-color: #4caf50;
+}
+
+.bg-green:hover {
+  background-color: #45a049;
+}
+
+.bg-red {
+  background-color: #f44336;
+}
+
+.bg-red:hover {
+  background-color: #e53935;
+}
+
+.bg-gray {
+  background-color: #9e9e9e;
+}
+
+.bg-gray:hover {
+  background-color: #757575;
+}
+
+/* 📌 Плавное появление элементов */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 📌 Стиль для input file */
+input[type="file"] {
+  padding: 10px;
+  font-size: 16px;
+  color: white;
+  background-color: #1b1a55;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  margin: 10px 0;
+  transition: background-color 0.3s ease;
+}
+
+input[type="file"]:hover {
+  background-color: #4caf50;
+}
+
+input[type="file"]:focus {
+  outline: none;
+  background-color: #3e8e41;
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #1B1A55;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.back-button:hover {
+  background: #535C91;
+}
+
