@@ -3,7 +3,6 @@ import Configurator from "./pages/Configurator";
 import "./styles.css";
 import heroImage from "./assets/pogacar2.png";
 
-const heroImage = "/src/assets/pogacar2.png"; // Главное изображение на главной
 
 const App = () => {
   const [started, setStarted] = useState(false);
